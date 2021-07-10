@@ -41,7 +41,7 @@ render(){
                 <FormInput name="password" type = "password" handleChange = {this.handleChange} label = "Password" value={this.state.password} required />
                 <div className="buttons">
                 <CustomButton type="submit">SIGN IN</CustomButton>
-                <CustomButton onClick = {signInWithGoogle} isGoogleSignIn>SIGN IN WITH GOOGLE</CustomButton>
+                <CustomButton type="button" onClick = {signInWithGoogle} isGoogleSignIn>SIGN IN WITH GOOGLE</CustomButton>
                 </div>
             </form>
         </div>

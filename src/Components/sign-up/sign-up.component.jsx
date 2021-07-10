@@ -60,28 +60,32 @@ class SignUp extends React.Component{
                     name = "displayName" 
                     value = {displayName} 
                     handleChange = {this.handleChange} 
-                    label = "Display Name" 
+                    label = "Display Name"
+                    required 
                     />
                     <FormInput 
                     type = "email" 
                     name = "email" 
                     value = {email} 
                     handleChange = {this.handleChange} 
-                    label = "Email" 
+                    label = "Email"
+                    required 
                     />
                     <FormInput 
                     type = "password" 
                     name = "password" 
                     value = {password} 
                     handleChange = {this.handleChange} 
-                    label = "Password" 
+                    label = "Password"
+                    required 
                     />
                     <FormInput 
                     type = "password" 
                     name = "confirmpassword" 
                     value = {confirmpassword} 
                     handleChange = {this.handleChange} 
-                    label = "Confirm Password" 
+                    label = "Confirm Password"
+                    required 
                     />
                     <CustomButton type = "submit">SIGN UP</CustomButton>
                 </form>

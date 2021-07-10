@@ -1,8 +1,12 @@
 import React from 'react';
+
 import { Link } from 'react-router-dom';
 import { auth } from '../../firebase/firebase.utils';
-import './Header.style.scss';
+
+import { connect } from 'react-redux';
+
 import { ReactComponent as Logo } from '../../assets/4.1 crown.svg';
+import './Header.style.scss';
  
 const  Header = ({currentUser}) => (
     <div className="header">
@@ -28,4 +32,7 @@ const  Header = ({currentUser}) => (
     </div>
 )
 
-export default Header;
+const mapStateToProps = (state) => {
+ return ({currentUser : state.user.currentUser,});
+}
+export default connect(mapStateToProps)(Header);
