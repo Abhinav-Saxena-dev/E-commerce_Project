@@ -5,10 +5,15 @@ import { auth } from '../../firebase/firebase.utils';
 
 import { connect } from 'react-redux';
 
+import CartIcon from '../cart-icon/cart-icon.component';
+
+import CartDropdown from '../cart-dropdown/cart-dropdown.component';
+
 import { ReactComponent as Logo } from '../../assets/4.1 crown.svg';
+
 import './Header.style.scss';
  
-const  Header = ({currentUser}) => (
+const  Header = ({currentUser, hidden}) => (
     <div className="header">
         <Link to = "/" className ="logo-container">
             <Logo className="logo" />
@@ -28,11 +33,18 @@ const  Header = ({currentUser}) => (
                 :
                 <Link className = "option" to = '/signin'>SIGN IN</Link>
             }
+            <CartIcon/>
         </div>
+            {
+                (!hidden) ? <CartDropdown/> : null
+            }
     </div>
 )
 
-const mapStateToProps = (state) => {
- return ({currentUser : state.user.currentUser,});
+const mapStateToProps = ({user : {currentUser}, cart : {hidden}}) => {
+ return ({
+     currentUser : currentUser,
+     hidden : hidden,
+    });
 }
 export default connect(mapStateToProps)(Header);
