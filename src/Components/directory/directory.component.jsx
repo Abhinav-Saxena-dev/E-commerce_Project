@@ -18,7 +18,7 @@ const Directory = ({sections}) =>{
          sections.map( ({id, ...sectionProps }) => <Menulist key = {id} {...sectionProps}/>)
        }
       </div>
-    );
+    );  
   }
 
 
