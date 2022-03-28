@@ -10,7 +10,7 @@ export const selectCollections = createSelector(
 export const selectCollectionsForPreview = createSelector(
     [selectCollections],
     collections => {
-        console.log(Object.keys(collections).map(key => collections[key]))
+        console.log(Object.keys(collections).map(key => collections[key]))   // Object.keys doesn't modify the array, it returns a new one.
         return Object.keys(collections).map(key => collections[key])}
 );
 
